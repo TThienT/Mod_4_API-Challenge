@@ -1,0 +1,129 @@
+:root {
+    --button-color: skyblue;
+    --button-hover-color: 177, 29, 177;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+header h2 {
+    display: inline-flex;
+    justify-content: space-between;
+    font-size: 120%;
+    font-weight: 100;
+    margin: auto 0px;
+}
+
+#time {
+    padding-left: 5px;
+    font-size: 105%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 40px 120px;
+}
+
+#quiz-header {
+    font-size: 180%;
+    width: 80%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#quiz-description {
+    width: 80%;
+    text-align: center;
+}
+
+#quiz-button {
+    margin-top: 20px;
+}
+
+main ol {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 80%;
+    height: 120px;
+}
+
+button[id^="quiz-button"] {
+    cursor: pointer;
+    background-color: var(--button-color);
+    border-radius: 7px;
+    padding: 2px 5px;
+    position: relative;
+    border-width: 1px;
+}
+
+button[id^="quiz-button"]::before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    background-color: rgba(var(--button-hover-color), 0.0);
+}
+
+button[id^="quiz-button"]:hover::before {
+    background-color: rgba(var(--button-hover-color), 0.3);
+    transition: all 0.2s ease-in-out;
+}
+
+#question-result {
+    text-align: left;
+    width: 80%;
+    padding-top: 15px;
+    margin-top: 15px;
+    border-top-width: 2px;
+    border-top-style: solid;
+    border-top-color: grey;
+    color: grey;
+    font-style: italic;
+}
+
+#quiz-save-score {
+    margin-top: 10px;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+}
+
+#quiz-label-save-score {
+    margin: auto 0px;
+    padding-right: 5px;
+}
+
+#quiz-button-save-score {
+    margin-left: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        margin: 40px 80px;
+    }
+    #quiz-header {
+        font-size: 160%;
+    }
+}
+
+
+@media screen and (max-width: 576px) {
+    main {
+        margin: 40px 40px;
+    }
+    #quiz-header {
+        font-size: 140%;
+    }
+}
